@@ -1,0 +1,18 @@
+{
+  "name": "Begim",
+  "description": "Health Tracker",
+  "version": "0.0.1",
+  "homepage": "http://begim.info",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "startbootstrap-sb-admin-2": "~1.0.8",
+    "firebase": "~2.3.2",
+    "angularfire": "~1.1.3",
+    "angular-chart.js": "~0.8.6"
+  }
+}

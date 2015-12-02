@@ -1,0 +1,8 @@
+.c9/
+!.gitkeep
+node_modules/
+app/bower_components/
+e2e-tests/
+tmp
+.DS_Store
+.idea
