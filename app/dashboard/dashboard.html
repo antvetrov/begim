@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="panel panel-default">
-          <div class="panel-heading">Подтягивание</div>
+          <div class="panel-heading">{{ user.pullUps.label }}</div>
           <!-- /.panel-heading -->
           <div class="panel-body">
             <canvas id="line" class="chart chart-line" chart-data="data.pullUps.diagram"
@@ -51,7 +51,7 @@
       <div class="col-lg-6">
         <!-- /.panel -->
         <div class="panel panel-default">
-          <div class="panel-heading">Зарядка</div>
+          <div class="panel-heading">{{ user.workout.label }}</div>
           <div class="panel-body">
             <canvas id="doughnut" class="chart chart-doughnut" chart-data="data.workout.diagram" 
               chart-labels="workoutLabels"></canvas>
@@ -68,7 +68,7 @@
 
       <div class="col-lg-6">
         <div class="panel panel-default">
-          <div class="panel-heading">Пресс</div>
+          <div class="panel-heading">{{ user.abdominal.label }}</div>
           <!-- /.panel-heading -->
           <div class="panel-body">
             <canvas id="line" class="chart chart-line" chart-data="data.abdominal.diagram"

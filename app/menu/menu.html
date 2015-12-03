@@ -7,11 +7,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Бегим</a>
+      <a class="navbar-brand" href="#/">Бегим</a>
     </div>
     
     <!-- /.navbar-header -->
     <ul class="nav navbar-top-links navbar-right">
+      <li class="dropdown" ng-show="authData">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-alerts">
+            <li ng-repeat="notification in trainingPlan" ng-show="notification.$value">
+                <a>
+                    <div>
+                        <i class="fa "></i> {{ notification.$id }}
+                        <!--<span class="pull-right text-success small">{{ notification.$value }}</span>-->
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- /.dropdown-alerts -->
+      </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">{{ authData.facebook.cachedUserProfile.first_name }}
           <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -21,10 +37,10 @@
             <a ng-click="loginFacebook()" ng-hide="authData"><i class="fa fa-user fa-fw"></i> Войти</a>
           </li>
           <li>
-            <a href="#/"><i class="fa fa-gear fa-fw"></i> Профиль</a>
+            <a href="#/userProfile" ng-show="authData"><i class="fa fa-gear fa-fw"></i> Профиль</a>
           </li>
-          <li class="divider"></li>
-          <li><a ng-click="logOut(user)"><i class="fa fa-sign-out fa-fw"></i> Выход</a>
+          <li class="divider" ng-show="authData"></li>
+          <li><a ng-click="logOut(user)" ng-show="authData" href="#/"><i class="fa fa-sign-out fa-fw"></i> Выход</a>
           </li>
         </ul>
           <!-- /.dropdown-user -->

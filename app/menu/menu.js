@@ -2,9 +2,9 @@
 
 angular.module('myApp.menu', [])
 
-  .controller('MenuCtrl', ['$scope', 'FirebaseUrl', '$firebaseObject', 
+  .controller('MenuCtrl', ['$scope', 'FirebaseUrl', '$firebaseArray', 
     '$firebaseAuth',
-    function($scope, FirebaseUrl, $firebaseObject, $firebaseAuth) {
+    function($scope, FirebaseUrl, $firebaseArray, $firebaseAuth) {
 
 	//Get user auth data
 	var auth = $firebaseAuth(FirebaseUrl);
@@ -14,6 +14,13 @@ angular.module('myApp.menu', [])
     $scope.authData = authData;
   });
   
+  //Todo list
+  var today = new Date().getDay();
+  var userId = FirebaseUrl.getAuth().uid;
+  var weekdays = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+  $scope.trainingPlan = $firebaseArray(FirebaseUrl.child("users/" + userId + 
+    "/trainingPlan/" + weekdays[today]));
+
  	//Login with facebook
  	$scope.loginFacebook = function() {
 		FirebaseUrl.authWithOAuthPopup("facebook", function(authData) {

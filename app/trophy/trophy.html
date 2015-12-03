@@ -38,8 +38,8 @@
                           <tr class="gradeA odd" role="row" ng-repeat="user in users">
                             <td class="sorting_1">{{$index + 1}}</td>
                             <td>{{ user.name }}</td>
-                            <td class="text-primary">{{ user.workout.diagram[0] }}</td>
-                            <td class="center">{{ user.pullUps.diagram[0][user.pullUps.diagram[0].length - 1] }}</td>
+                            <td>{{ user.workout.diagram[0] }}</td>
+                            <td>{{ user.pullUps.diagram[0][user.pullUps.diagram[0].length - 1] }}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -49,9 +49,13 @@
               </div>
               <!-- /.table-responsive -->
               <div class="well">
-                <p>Разъяснение:</p>
-                <p>Чёрный - неподтверждённые результаты</p>
-                <p><font class="text-primary">Голубой</font> - подтверждённые результаты</p>
+                <dl class="dl-horizontal">
+                  <dt>Зарядка:</dt>
+                  <dd>Данные проверены сервисом</dd>
+                  <dt>Подтягивания:</dt>
+                  <dd>Данные не проверены</dd>
+                  <dd>Указана общая сумма всех подходов одного занятия</dd>
+                </dl>
               </div>
             </div>
             <!-- /.panel-body -->

@@ -9,7 +9,8 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.dashboard',
   'myApp.exercises',
-  'myApp.trophy'
+  'myApp.trophy',
+  'myApp.userProfile'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});

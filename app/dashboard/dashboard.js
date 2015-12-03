@@ -44,16 +44,19 @@ angular.module('myApp.dashboard', ['ngRoute'])
       $scope.createUser = function() {
         //workouts
         $scope.user.workout = {
+          label: "Зарядка",
           diagram: [0, 40, 0, 0],
           lastDay: new Date().getTime() - 24*60*60*1000
         };
         //pull up
         $scope.user.pullUps = {
+          label: "Подтягивание",
           diagram: [[0]],
           pullLabels: ["Занятие 1"],
         };
         //abdominal
         $scope.user.abdominal = {
+          label: "Пресс",
           diagram: [[0]],
           labels: ["Занятие 1"],
         };
